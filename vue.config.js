@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: "/quote-app/",
+  publicPath: "/everyquotes/",
 };
