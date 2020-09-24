@@ -1,14 +1,29 @@
 <template>
-  <testComponent />
+  <form-component @data-submitted="addData" />
+  <display-quote v-if="name" :name="name" :quote="quote" />
 </template>
 
 <script>
-import testComponent from "./components/Test";
+import formComponent from "./components/form-component";
+import displayQuote from "./components/display-quote";
 
 export default {
   name: "App",
   components: {
-    testComponent,
+    "form-component": formComponent,
+    "display-quote": displayQuote,
+  },
+  data() {
+    return {
+      name: "",
+      quote: "",
+    };
+  },
+  methods: {
+    addData(dataObj) {
+      this.name = dataObj.name;
+      this.quote = dataObj.quote;
+    },
   },
 };
 </script>
@@ -21,6 +36,10 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #bbbbbb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 </style>
