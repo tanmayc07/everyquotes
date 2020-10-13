@@ -1,0 +1,17 @@
+version = 1
+
+exclude_patterns = [
+    "/dist",
+    ".whitesource",
+    "babel.config.js",
+    "vue.config.js ",
+    "deploy.sh"
+]
+
+[[analyzers]]
+name = "javascript"
+enabled = true
+
+  [analyzers.meta]
+  environment = ["nodejs"]
+  plugins = ["vue"]
